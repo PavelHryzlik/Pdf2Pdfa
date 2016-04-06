@@ -10,7 +10,7 @@ namespace Pdf2PdfaTest
         [TestMethod]
         public void Pdf2PdfaTest()
         {
-            Pdf2PdfaLib.Converter.Convert(@"resources/test.pdf", @"resources/test_pdfa.pdf", PdfAConformanceLevel.PDF_A_3B);
+            Pdf2PdfaLib.Converter.Convert(@"resources/test.pdf", @"resources/test_pdfa.pdf", "PDF_A_3B");
         }
     }
 }

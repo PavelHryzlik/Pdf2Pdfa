@@ -17,9 +17,7 @@ namespace Pdf2Pdfa
 
             try
             {
-                PdfAConformanceLevel pdfAConformanceLevel = (PdfAConformanceLevel)Enum.Parse(typeof(PdfAConformanceLevel), args[2]);
-
-                Pdf2PdfaLib.Converter.Convert(args[0], args[1], pdfAConformanceLevel);
+                Pdf2PdfaLib.Converter.Convert(args[0], args[1], args[2]);
 
                 Console.WriteLine("Converted to " + args[1]);
             }

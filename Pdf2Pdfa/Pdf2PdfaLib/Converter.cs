@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
@@ -51,10 +52,11 @@ namespace Pdf2PdfaLib
             }
         }
 
-        public static void Convert(string inputPath, string outputPath, PdfAConformanceLevel pdfAConformanceLevel)
+        public static void Convert(string inputPath, string outputPath, string pdfAConformanceLevel)
         {
             _inputFilePath = inputPath;
-            _pdfaConformanceLevel = pdfAConformanceLevel;
+            _pdfaConformanceLevel = (PdfAConformanceLevel)Enum.Parse(typeof(PdfAConformanceLevel), pdfAConformanceLevel);
+
             PdfReader reader = new PdfReader(_inputFilePath);
 
             Document doc = new Document();
@@ -78,9 +80,9 @@ namespace Pdf2PdfaLib
             }
         }
 
-        //public static MemoryStream Convert(MemoryStream inputStream, PdfAConformanceLevel pdfAConformanceLevel)
+        //public static MemoryStream Convert(MemoryStream inputStream, string pdfAConformanceLevel)
         //{
-        //    _pdfaConformanceLevel = pdfAConformanceLevel;
+        //    _pdfaConformanceLevel = (PdfAConformanceLevel)Enum.Parse(typeof(PdfAConformanceLevel), pdfAConformanceLevel);
 
         //    PdfReader reader = new PdfReader(inputStream);
 
